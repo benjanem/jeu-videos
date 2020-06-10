@@ -8,11 +8,14 @@ class Post(models.Model):
     title = models.CharField(max_length=200)
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
+
+    # Date de sortie
     published_date = models.DateTimeField(blank=True, null=True)
 
     # Image de couverture du jeu vidéo
-    # Date de sortie
+
     # Nombre d'exemplaires vendus
+    # TODO: Créer un champ de type IntegerField
 
     def publish(self):
         self.published_date = timezone.now()
