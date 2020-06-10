@@ -1,6 +1,5 @@
-
-
-<html>
+{% load static %}
+<html lang="fr">
     <head>
         <title>jeu videos de chaque année</title>
     </head>
@@ -18,6 +17,13 @@
             {% endif %}
 
             <p>{{ post.text }}</p>
+
+            {# TODO: Mettre ces lignes dans le template post_detail.html #}
+            <p>Nombre d'exemplaires vendus: {{ post.sold_amount }}</p>
+            {% if post.image %}
+              <img src="{{ post.image.url }}" alt="Couverture {{ post.title }}">
+            {% endif %}
+
           </div>
         {% endfor %}
 
