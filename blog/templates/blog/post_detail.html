@@ -1,6 +1,15 @@
 {% extends 'blog/base.html' %}
 {%block content%}
 
-            <h1>le jeu video: {{post.title}}</h1>
+  <h1>le jeu video: {{post.title}}</h1>
+
+  <p  class="fontsize fr"> {{ post.text|linebreaksbr }}</p>
+
+  {% if post.sold_amount %}
+    <p>Nombre d'exemplaires vendus: {{ post.sold_amount }}</p>
+  {% endif %}
+  {% if post.image %}
+    <img src="{{ post.image.url }}" alt="Couverture {{ post.title }}" class="img-responsive detail-image">
+  {% endif %}
 
 {%endblock%}
