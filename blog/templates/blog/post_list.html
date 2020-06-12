@@ -11,6 +11,11 @@
                         </div>
                         <h2><a href="{% url 'post_detail' post_id=post.pk %}">{{ post.title }}</a></h2>
                         <p  class="fontsize fr"> {{ post.text|linebreaksbr }}</p>
+                        {# TODO: Mettre ces lignes dans le template post_detail.html #}
+                        <p>Nombre d'exemplaires vendus: {{ post.sold_amount }}</p>
+                        {% if post.image %}
+                          <img src="{{ post.image.url }}" alt="Couverture {{ post.title }}">
+                        {% endif %}
                     </div>
                 {% endfor %}
                 </div>
