@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from blog.models import Post
-# Create your views here.
+from django.shortcuts import render, get_object_or_404
 
 
 def post_list(request):
@@ -8,11 +8,9 @@ def post_list(request):
     return render(request, 'blog/post_list.html', {
         "posts": posts
     })
-#from django.urls import path
-#from . import views
 
-#urlpatterns = [
-#    path('', views.post_list, name='post_list'),
-#    path('post/<int:pk>/', views.post_detail, name='post_detail'),
-#    path('post/new/', views.post_new, name='post_new'),
-#]
+def post_detail(request, post_id):
+    post = get_object_or_404(Post, pk=post_id)
+    return render(request, 'blog/post_detail.html', {
+        "post": post
+    })

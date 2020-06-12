@@ -1,0 +1,62 @@
+h1 a, h2 a {
+  color:orange ;
+}
+
+
+.page-header {
+    background-color:#01f770 ;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: black;
+    font-size: 35;
+    text-decoration: none;
+}
+.fontsize{
+  font-size: 20px
+}
+.content {
+    margin-left: 40px;
+}
+.body{
+  background-color:grey ;
+}
+.card {
+  color:#052991;
+}
+h1, h2, h3, h4 {
+    font-family: 'Metal Mania', cursive;
+}
+
+.date {
+    color: black;
+}
+
+.save {
+    float: right;
+}
+
+.post-form textarea, .post-form input {
+    width: 100%;
+}
+
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: #black;
+    float: right;
+    font-size: 26pt;
+    margin-right: 20px;
+}
+
+.post {
+    margin-bottom: 70px;
+}
+
+.post h2 a, .post h2 a:visited {
+    color: #black;
+}
+
+.fr{
+  color: white
+}

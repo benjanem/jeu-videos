@@ -1,27 +1,18 @@
+{% extends 'blog/base.html' %}
 
 
-<html>
-    <head>
-        <title>jeu videos de chaque année</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">jeu videos de chaque année</a></h1>
-        </div>
-
-        {% for post in posts %}
-          <div>
-            <h2><a href="">{{ post.title }}</a></h2>
-
-            {% if post.published_date %}
-              <p>Date de publication: {{ post.published_date }}</p>
-            {% endif %}
-
-            <p>{{ post.text }}</p>
-          </div>
-        {% endfor %}
-
-        {# TODO: Afficher nombre_exemplaires_vendus #}
-
-    </body>
-</html>
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+                {% for post in posts %}
+                    <div class="card">
+                        <div class="date">
+                            {{ post.published_date }}
+                        </div>
+                        <h2><a href="{% url 'post_detail' post_id=post.pk %}">{{ post.title }}</a></h2>
+                        <p  class="fontsize fr"> {{ post.text|linebreaksbr }}</p>
+                    </div>
+                {% endfor %}
+                </div>
+                </div>
+{% endblock %}
