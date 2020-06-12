@@ -18,6 +18,8 @@ class Post(models.Model):
     # Nombre d'exemplaires vendus
     sold_amount = models.CharField(max_length=200, blank=True, null=True)
 
+    video = models.CharField(max_length=200, blank=True, null=True)
+
     def publish(self):
         self.published_date = timezone.now()
         self.save()

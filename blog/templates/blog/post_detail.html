@@ -8,8 +8,23 @@
   {% if post.sold_amount %}
     <p>Nombre d'exemplaires vendus: {{ post.sold_amount }}</p>
   {% endif %}
-  {% if post.image %}
-    <img src="{{ post.image.url }}" alt="Couverture {{ post.title }}" class="img-responsive detail-image">
-  {% endif %}
 
+
+<div class="row game-media">
+  <div class="col-md-6">
+    {% if post.image %}
+      <img src="{{ post.image.url }}" alt="Couverture {{ post.title }}" class="detail-image">
+    {% endif %}
+  </div>
+  <div class="col-md-6">
+    <iframe
+      width="500"
+      height="315"
+      src="https://www.youtube.com/embed/{{ post.video }}"
+      frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
 {%endblock%}
