@@ -16,7 +16,12 @@ class Post(models.Model):
     image = models.ImageField(null=True, blank=True)
 
     # Nombre d'exemplaires vendus
-    sold_amount = models.CharField(max_length=200, blank=True, null=True)
+    sold_amount = models.IntegerField(
+        blank=True,
+        null=True,
+        verbose_name="Nombre d'exemplaires vendus",
+        help_text="Nombre d'exemplaires vendus en millions"
+    )
 
     def publish(self):
         self.published_date = timezone.now()
