@@ -60,3 +60,8 @@ h1, h2, h3, h4 {
 .fr{
   color: white
 }
+
+.detail-image{
+    margin: 20px auto;
+    width: 60%;
+}
